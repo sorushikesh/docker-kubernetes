@@ -69,20 +69,24 @@ docker run -p 8080:8080 springboot-docker-demo
 ## Docker Commands
 ### Image Commands
 ```bash
-docker build -t <image-name> .       # Build Docker image
+docker build -t <image-name> .        # Build Docker image
 docker images                         # List all Docker images
 docker rmi <image-id>                 # Remove image by ID
 docker tag <image> <new-name>         # Rename or retag image
+docker inspect <image>                # Docker image details
 ```
 
 ### Container Commands
 ```bash
 docker run -p 8080:8080 <image-name>             # Run a container
 docker run -d -p 8080:8080 <image-name>          # Run in detached mode (in background)
+docker run -p 8080:8080 -d --rm <image-name>     # Run a container and remove container automatically on exit ( --rm tag used to clear container automatically once conatiner is stoped)
 docker ps                                        # List running containers
 docker ps -a                                     # List all containers (running + stopped)
+docker start <container-id/conainer-name>        # Start container (Default is detached mode)
 docker stop <container-id>                       # Stop a container
 docker rm <container-id>                         # Remove a container
+docker container prune                           # Remove all container at once
 ```
 
 ### Inspect & Logs

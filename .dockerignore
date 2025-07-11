@@ -1,6 +1,3 @@
-# Maven output
-target/
-
 # IDEs and editors
 .idea/
 *.iml
