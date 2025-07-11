@@ -4,7 +4,6 @@
 This project is a simple Spring Boot application created for learning Docker and kubernetes. It focuses on containerization, image optimization, and running Java microservices in isolated environments.
 
 ---
-
 ## Tech Stack
 
 - Java 21
@@ -12,7 +11,6 @@ This project is a simple Spring Boot application created for learning Docker and
 - Maven
 - Docker
 - Kubernetes
-
 ---
 
 ## Running the App Locally (Without Docker)
@@ -26,7 +24,6 @@ mvn clean install
 
 # Run the Spring Boot app
 ./mvnw spring-boot:run
-
 ````
 ---
 
@@ -49,36 +46,28 @@ EXPOSE 8080
 
 # Entry point to run the app
 ENTRYPOINT ["java", "-jar", "app.jar"]
-
 ```
 ---
 
 ### Step 2: Build Docker Image
-
 ```bash
 docker build -t springboot-docker-demo .
 ```
-
 * `-t springboot-docker-demo`: Tags the image with a name.
 * `.`: Context is the current directory (Dockerfile and target folder should be here).
-
 ---
 
 ### Step 3: Run Docker Container
-
 ```bash
 docker run -p 8080:8080 springboot-docker-demo
 ```
 
 * `-p 8080:8080`: Maps local port 8080 to container's 8080.
 * `springboot-docker-demo`: Name of the image to run.
-
 ---
 
 ## Docker Commands
-
 ### Image Commands
-
 ```bash
 docker build -t <image-name> .       # Build Docker image
 docker images                         # List all Docker images
@@ -87,7 +76,6 @@ docker tag <image> <new-name>         # Rename or retag image
 ```
 
 ### Container Commands
-
 ```bash
 docker run -p 8080:8080 <image-name>             # Run a container
 docker run -d -p 8080:8080 <image-name>          # Run in detached mode (in background)
@@ -98,7 +86,6 @@ docker rm <container-id>                         # Remove a container
 ```
 
 ### Inspect & Logs
-
 ```bash
 docker logs <container-id>                       # View logs
 docker inspect <container-id>                    # Inspect container details
@@ -106,10 +93,8 @@ docker exec -it <container-id> /bin/bash         # Open terminal in running cont
 ```
 
 ### Cleanup
-
 ```bash
 docker system prune                              # Remove unused containers/images/networks
 docker volume prune                              # Remove unused volumes
 ```
 ---
-
