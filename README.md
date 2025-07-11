@@ -69,10 +69,11 @@ docker run -p 8080:8080 springboot-docker-demo
 ## Docker Commands
 ### Image Commands
 ```bash
-docker build -t <image-name> .       # Build Docker image
+docker build -t <image-name> .        # Build Docker image
 docker images                         # List all Docker images
 docker rmi <image-id>                 # Remove image by ID
 docker tag <image> <new-name>         # Rename or retag image
+docker inspect <image>                # Docker image details
 ```
 
 ### Container Commands
